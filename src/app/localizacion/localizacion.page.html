@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>localizacion</ion-title>
+    <!-- del tipo etiqueta --> 
+    <input type="text" id="autocomplete">
+    <ion-button expand="block" (click)="calculaRuta()">Indicaciones del trayecto</ion-button> 
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <div id="map"></div>
+ <div id="trayecto"></div>
+</ion-content>

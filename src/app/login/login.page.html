@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login GITHUB</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  <div class="logo-container"   >
+  <img #logo  src="assets/icon/logoduocuc.png" alt="logotipo de la Empresa" class="logo" />
+  <p #text class="text">Este es el texto que se mostrara debajo de la imagen</p> 
+  </div>
+
+
+  <form [formGroup]="loginForm"   (ngSubmit)="onLogin()">
+    <ion-item>
+        <ion-label position="stacked">Usuario</ion-label>
+        <ion-input formControlName="username"    placeholder="Ingresa usuario" maxlength="8"></ion-input>  
+    </ion-item>
+
+    <div *ngIf="loginForm.get('username')?.invalid &&  loginForm.get('username')?.touched"> Error Usuario</div>   
+
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input  formControlName="password"  type="password" placeholder="****"  maxlength="4"></ion-input>  
+  </ion-item>
+
+  <ion-button expand="block" type="submit [disabled]=loginForm.valid">Ingresar</ion-button>
+
+  </form>
+
+</ion-content>

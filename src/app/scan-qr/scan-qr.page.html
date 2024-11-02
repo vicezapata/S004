@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>scan-qr</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="reader"></div>
+
+  <div *ngIf="!isCameraPermissionGranted">
+    <ion-button (click)="requestCameraPermission()">Solicitar Permisos</ion-button>
+  </div>
+
+    <div *ngIf="scannerResult">
+      <p>Resultado del scanner {{ scannerResult}}</p>
+    </div>
+  
+</ion-content>
